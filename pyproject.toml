@@ -1,0 +1,37 @@
+[project]
+name = "stream-ai-agents"
+version = "1.0.0"
+description = "A voice-driven AI assistant for live streams."
+readme = "README.md"
+requires-python = "3.9.2"
+dependencies = [
+    "azure-cognitiveservices-speech (==1.34.0)",
+    "elevenlabs (==0.2.8)",
+    "keyboard (==0.13.5)",
+    "mutagen (==1.46.0)",
+    "nltk (==3.9.1)",
+    "numpy (==2.0.2)",
+    "obs-websocket-py (==1.0)",
+    "openai (==1.60.0)",
+    "pydantic (>=1.10,<2)",
+    "pydub (==0.25.1)",
+    "pygame (==2.6.1)",
+    "python-dotenv (==1.0.1)",
+    "rich (==13.7.0)",
+    "sounddevice (==0.5.1)",
+    "soundfile (==0.12.1)",
+    "tiktoken (==0.8.0)",
+]
+
+[project.scripts]
+ai-agents = "ai_agents.ai_agents:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+packages = [{ include = "ai_agents", from = "src" }]
+include = [
+    { path = "src/ai_agents/ai_images/*.png", format = ["sdist", "wheel"] }
+]

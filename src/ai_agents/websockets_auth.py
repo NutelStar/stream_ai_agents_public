@@ -1,0 +1,5 @@
+import os
+
+WEBSOCKET_HOST = os.getenv("OBS_WEBSOCKET_HOST", "localhost")
+WEBSOCKET_PORT = int(os.getenv("OBS_WEBSOCKET_PORT", "4455"))
+WEBSOCKET_PASSWORD = os.getenv("OBS_WEBSOCKET_PASSWORD", "")
